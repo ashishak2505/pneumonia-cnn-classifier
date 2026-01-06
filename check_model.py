@@ -1,8 +1,8 @@
 import os
 
-MODEL_PATH = "model/pneumonia_mobilenetv2.h5"
+model_path = "model/pneumonia_mobilenetv2.h5"
 
-if not os.path.exists(MODEL_PATH):
-    raise FileNotFoundError(f"Model file not found at {MODEL_PATH}")
+if not os.path.exists(model_path):
+    raise FileNotFoundError(f"Model file not found at {model_path}")
 
 print("Model file exists ✅")
