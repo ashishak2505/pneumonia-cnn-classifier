@@ -3,6 +3,7 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
+import os
 from PIL import Image
 
 # App title
@@ -12,10 +13,12 @@ st.write("Upload a chest X-ray image to predict Pneumonia.")
 
 # Load model
 @st.cache_resource
-def load_cnn_model():
-    return load_model("pneumonia_mobilenetv2.h5")
+def load_model():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(base_dir, "model", "pneumonia_cnn.h5")
+    return tf.keras.models.load_model(model_path)
 
-model = load_cnn_model()
+model = load_model()
 
 IMG_SIZE = (224, 224)
 
