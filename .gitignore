@@ -8,8 +8,12 @@ __pycache__/
 venv/
 .env/
 
-# Model files (optional if large)
+# ignore all h5 by default
 *.h5
+
+# but track this model
+!model/pneumonia_mobilenetv2.h5
+
 
 # Jupyter
 .ipynb_checkpoints/
